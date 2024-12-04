@@ -15,6 +15,7 @@ using CUE4Parse.Compression;
 using CUE4Parse.Encryption.Aes;
 using CUE4Parse.FileProvider;
 using CUE4Parse.FileProvider.Vfs;
+using CUE4Parse.GameTypes.InfinityNikki.Encryption;
 using CUE4Parse.GameTypes.ApexMobile.Encryption.Aes;
 using CUE4Parse.GameTypes.DBD.Encryption.Aes;
 using CUE4Parse.GameTypes.DeltaForce.Encryption.Aes;
@@ -193,6 +194,7 @@ public class CUE4ParseViewModel : ViewModel
         Provider.ReadScriptData = UserSettings.Default.ReadScriptData;
         Provider.CustomEncryption = Provider.Versions.Game switch
         {
+            EGame.GAME_InfinityNikki => InfinityNikkieAes.InfinityNikkieDecrypt,
             EGame.GAME_ApexLegendsMobile => ApexLegendsMobileAes.DecryptApexMobile,
             EGame.GAME_Snowbreak => SnowbreakAes.SnowbreakDecrypt,
             EGame.GAME_MarvelRivals => MarvelAes.MarvelDecrypt,
