@@ -194,7 +194,7 @@ public class CUE4ParseViewModel : ViewModel
         Provider.ReadScriptData = UserSettings.Default.ReadScriptData;
         Provider.CustomEncryption = Provider.Versions.Game switch
         {
-            EGame.GAME_InfinityNikki => InfinityNikkieAes.InfinityNikkieDecrypt,
+            EGame.GAME_InfinityNikki => InfinityNikkiAes.InfinityNikkiDecrypt,
             EGame.GAME_ApexLegendsMobile => ApexLegendsMobileAes.DecryptApexMobile,
             EGame.GAME_Snowbreak => SnowbreakAes.SnowbreakDecrypt,
             EGame.GAME_MarvelRivals => MarvelAes.MarvelDecrypt,
